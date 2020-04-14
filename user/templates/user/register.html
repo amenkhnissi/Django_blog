@@ -1,0 +1,23 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+
+<div style="margin-left: 20% ; margin-bottom: 20%;">
+    <h2 style="padding-left: 27% ;"><span> Registration </span></h2><br />
+    <div class="row">
+        <div class="col-lg-8 col-md-12 mx-auto" style="border:solid 4px ;border-radius: 10px; ">
+            <form method="POST"><br/>
+                {% csrf_token %}
+                {{ form | crispy }}
+                <input type="submit" value="Register" class="btn btn-primary" style="margin-bottom: 12px ;"><br />
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
